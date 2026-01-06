@@ -14,6 +14,11 @@ export default function Search ({updateInfo}){
     try{
             let latlong= await fetch (`${COUNTRY}?q=${city}&featureCode=PCLI&maxRows=1&username=${KEY}`)
     let latlongres = await latlong.json();
+    if (!latlongres.geonames || latlongres.geonames.length === 0) {
+  console.error("No data from GeoNames", latlongres);
+  return;
+}
+
 let lat = latlongres.geonames[0].lat;
 let long = latlongres.geonames[0].lng;
      let res = await fetch(`${API_URL}?lat=${lat}&lng=${long}&username=${KEY}`)
