@@ -1,0 +1,7 @@
+.totalbox{
+    text-align: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+}
