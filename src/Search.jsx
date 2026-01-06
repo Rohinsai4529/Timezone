@@ -5,6 +5,8 @@ import { useState } from 'react';
 export default function Search ({updateInfo}){
      const [city,setCity] =useState("");
      const [error,setError]=useState(false);
+     console.log("ENV:", import.meta.env);
+
      const COUNTRY=import.meta.env.VITE_COUN;
     const API_URL=import.meta.env.VITE_API;
     const KEY =import.meta.env.VITE_K;
